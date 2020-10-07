@@ -1,6 +1,10 @@
 <?php
   if (isset($_GET["newEvent"])) {
     $event = $_GET["newEvent"];
-    echo "Processed event with name: " . $event;
-  }
+    $result_arr = [
+      "newEvent" => $newEvent,
+      "status" => "success"
+    ];
+    echo json_encode($result_arr);
+  ;
 ?>
