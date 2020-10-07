@@ -1,6 +1,6 @@
 <?php
   if (isset($_GET["newEvent"])) {
     $event = $_GET["newEvent"];
-    echo "Processed" . $event;
+    echo "Processed event with name: " . $event;
   }
 ?>
