@@ -15,6 +15,6 @@
       "origin": "49.245.55.45", 
       "url": "http://httpbin.org/get"
     }
-    '
+    ';
   }
 ?>
