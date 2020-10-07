@@ -1,6 +1,6 @@
 <?php
   if (isset($_GET["newEvent"])) {
-    $event = $_GET["newEvent"];
+    $newEvent = $_GET["newEvent"];
     $result_arr = [
       "newEvent" => $newEvent,
       "status" => "success"
