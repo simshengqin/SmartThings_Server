@@ -1,16 +1,20 @@
 <?php
-
   if (isset($_GET["newEvent"])) {
     $newEvent = $_GET["newEvent"];
-    $events_arr = $_SESSION["events"];
-    array_push($events_arr,$newEvent);
-    $_SESSION["events"] = $events_arr;
+    if (isset($_COOKIE['events'])) {
+      $events_arr = $_COOKIE["events"];
+      array_push($events_arr,$newEvent);
+      setcookie("events", $events_arr);
+    }
+    else {
+      setcookie("events", [$newEvent]);
+    }
+
     $result_arr = [
       "newEvent" => $newEvent,
       "status" => "success"
     ];
     echo json_encode($result_arr);
-  ;
   } 
   else if (isset($_GET["action"])) {
     $action = $_GET["action"];
@@ -23,8 +27,8 @@
     
   }
   else {
-    if (isset($_SESSION["events"])) {
-      echo json_encode($_SESSION["events"]);
+    if (isset($_COOKIE["events"])) {
+      echo json_encode($_COOKIE["events"]);
     ;
     }
     else {
