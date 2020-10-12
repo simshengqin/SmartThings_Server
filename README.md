@@ -7,12 +7,14 @@ A simple PHP app that can be deployed to Heroku to act as a server for Smart Thi
 
 Install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
+Note that the <app_name> is shown right after running heroku create
 ```sh
 git clone https://github.com/kanghj/iot_app_bundles.git # or clone your own fork
 cd iot_app_bundles\SmartThings_Server
 heroku login
-heroku create
-git push heroku main
+heroku create 
+heroku git:remote -a <app_name> 
+git push heroku master
 heroku open
 ```
 ## Deploying changes to the server
