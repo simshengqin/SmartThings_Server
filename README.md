@@ -31,15 +31,17 @@ heroku open
 There are 2 different endpoints to this server.
 
 Receive new events 
+
 Input: Event name Output: Success status of adding the event
 ```sh
 (/requests.php?newEvent=<event>) 
  ```
  
 Checks whether a particular method call is allowed. 
+
 Input: Action name Output: True or False
 ```sh
-(/requests.php?action=<event>) 
+(/requests.php?action=<action>) 
  ```
  
 ## Connecting SmartThings to this Heroku server
