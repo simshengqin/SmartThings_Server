@@ -12,9 +12,7 @@
     echo json_encode($result_arr);
   ;
   } 
-
-  
-  if (isset($_GET["action"])) {
+  else if (isset($_GET["action"])) {
     $action = $_GET["action"];
     $result_arr = [
       "action" => $action,
@@ -24,7 +22,15 @@
   ;
     
   }
+  else {
+    if (isset($_SESSION["events"])) {
+      echo json_encode($_SESSION["events"]);
+    ;
+    }
+    else {
+        $arr = array("message" => "No events found!");
+        echo json_encode($arr);
+    } 
+  }
 
-
- 
 ?>
